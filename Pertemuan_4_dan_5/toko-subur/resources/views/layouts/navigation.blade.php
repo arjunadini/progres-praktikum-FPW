@@ -41,11 +41,14 @@
                            Product Master
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('supplier-create')">
+                            Supplier Master
+                         </x-dropdown-link>
+
 
                     </x-slot>
                 </x-dropdown>
             </div>
-            
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
