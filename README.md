@@ -27,3 +27,5 @@
 </div>
 
 ## Deskripsi Program
+
+Fix bug pada pertemuan 8 🙏
