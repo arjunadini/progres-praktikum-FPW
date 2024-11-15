@@ -28,4 +28,4 @@
 
 ## Deskripsi Program
 
-Fix bug pada pertemuan 8 🙏
+Update Pertemuan 10
