@@ -22,40 +22,45 @@
             <button type="submit" class="ml-2 rounded-lg bg-green-500 px-4 py-2 text-white shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">Cari</button>
             </form>     
 
-          <a href="{{ route('products-create') }}" class="inline-block mb-4">
-              <button class="px-6 py-4 text-white bg-green-500 border border-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
-                  Tambah Data Produk
-              </button>
-          </a>
-
-            <button id="exportButton" class="px-6 py-4 text-white bg-green-500 border border-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <a href="{{ route('products-create') }}" class="inline-block mb-4">
+                <button class="px-6 py-4 text-white bg-green-500 border border-green-500 rounded-lg shadow-lg transition-transform duration-200 transform hover:scale-105 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    Tambah Data Produk
+                </button>
+            </a>
+            
+            <button id="exportButton" class="px-6 py-4 text-white bg-green-500 border border-green-500 rounded-lg shadow-lg transition-transform duration-200 transform hover:scale-105 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
                 Unduh Data Produk
             </button>
-            <div id="dropdownMenu" class="absolute left-0 hidden mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
-                <a href="{{ route('product-export-excel') }}" class="block px-4 py-2 text-gray-800 hover:bg-green-100">
+            
+            <div id="dropdownMenu" class="absolute left-0 hidden mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg transform transition-transform scale-95 duration-300 ease-in-out">
+                <a href="{{ route('product-export-excel') }}" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition-colors duration-200 ease-in-out">
                     Export Ke Excel
                 </a>
-                <a href="{{ route('products.export-pdf') }}" class="block px-4 py-2 text-gray-800 hover:bg-green-100">
+                <a href="{{ route('products.export-pdf') }}" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition-colors duration-200 ease-in-out">
                     Export ke PDF
                 </a>
             </div>
-        
-        <script>
-            document.getElementById('exportButton').addEventListener('click', function() {
-                var dropdown = document.getElementById('dropdownMenu');
-                dropdown.classList.toggle('hidden');
-            });
-        
-            // Menutup dropdown jika klik di luar
-            window.addEventListener('click', function(event) {
-                if (!event.target.matches('#exportButton')) {
+            
+            <script>
+                document.getElementById('exportButton').addEventListener('click', function() {
                     var dropdown = document.getElementById('dropdownMenu');
-                    if (!dropdown.classList.contains('hidden')) {
-                        dropdown.classList.add('hidden');
+                    dropdown.classList.toggle('hidden');
+                    dropdown.classList.toggle('scale-100');
+                });
+            
+                // Menutup dropdown jika klik di luar
+                window.addEventListener('click', function(event) {
+                    if (!event.target.matches('#exportButton') && !event.target.closest('#dropdownMenu')) {
+                        var dropdown = document.getElementById('dropdownMenu');
+                        if (!dropdown.classList.contains('hidden')) {
+                            dropdown.classList.add('hidden');
+                            dropdown.classList.remove('scale-100');
+                        }
                     }
-                }
-            });
-        </script>
+                });
+            </script>
+            
+            
 
 <br><br>
           <table class="min-w-full border border-collapse border-gray-200">
