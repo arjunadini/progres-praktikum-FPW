@@ -73,6 +73,7 @@
                       <th class="px-4 py-2 text-left text-gray-600 border border-gray-200">Informasi</th>
                       <th class="px-4 py-2 text-left text-gray-600 border border-gray-200">Jumlah</th>
                       <th class="px-4 py-2 text-left text-gray-600 border border-gray-200">Produsen</th>
+                      <th class="px-4 py-2 text-left text-gray-600 border border-gray-200">Suplier Name</th>
                       <th class="px-4 py-2 text-left text-gray-600 border border-gray-200">Aksi</th>
                   </tr>
               </thead>
@@ -90,6 +91,7 @@
                           <td class="px-4 py-2 border border-gray-200">{{ $product->information }}</td>
                           <td class="px-4 py-2 border border-gray-200">{{ $product->qty }}</td>
                           <td class="px-4 py-2 border border-gray-200">{{ $product->producer }}</td>
+                          <td class="px-4 py-2 border border-gray-200">{{ $product->supplier->supplier_name ?? 'no supplier' }}</td>
                           <td class="px-4 py-2 border border-gray-200">
                               <a href="{{ route('product-edit', $product->id) }}" class="px-2 text-blue-600 hover:text-blue-800">Edit</a>
                               <button class="px-2 text-red-600 hover:text-red-800" onclick="confirmDelete('{{ route('product-deleted', $product->id) }}')">Hapus</button>
