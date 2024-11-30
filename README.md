@@ -28,4 +28,4 @@
 
 ## Deskripsi Program
 
-Update Semua Pertemuan dan Tugas Eksport PDF
+Sudah Done Semua Pertemuan dan Tugas, untuk Repository pas saya upload jadi 1 malah ke reset tanggalnya teh jadi kaya baru ngirim semua🙏
